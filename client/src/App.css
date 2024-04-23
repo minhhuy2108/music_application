@@ -1,0 +1,8 @@
+header {
+    width: 85vw;
+    height: 95vh;
+    border: 1px green solid;
+    display: flex;
+    flex-wrap: wrap;
+    /* position: relative; */
+}

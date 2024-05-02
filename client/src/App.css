@@ -1,8 +1,6 @@
 header {
-    width: 85vw;
-    height: 95vh;
-    border: 1px green solid;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    /* position: relative; */
+    position: relative;
 }

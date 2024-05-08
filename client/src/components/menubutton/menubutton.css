@@ -3,6 +3,18 @@
     margin-left: 10px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: .1s linear;
+    font-size: large;
+    font-weight: 600;
+    display: flex;
+    text-decoration: none;
+}
+
+.btn-body-active {
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
     transition: .3s linear;
     font-size: large;
     font-weight: 600;
@@ -20,6 +32,6 @@
 }
 
 
-div .btn-body:hover {
+.btn-body:hover {
     color: rgb(255, 255, 255);
 }

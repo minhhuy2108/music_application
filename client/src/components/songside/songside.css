@@ -1,0 +1,9 @@
+.song-side {
+    width: calc(75% - 13.5px);
+    height: calc(90% - 7.5px);
+    background-color: #111727;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 7.5px;
+}

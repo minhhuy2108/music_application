@@ -1,0 +1,277 @@
+.login-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(0deg, #11222b 0 35%, #36e2ec); */
+    background: url(../../assets/login.jpg);
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    background-color: black;
+}
+
+.header h3 {
+    color: aliceblue;
+    position: absolute;
+    left: 45%;
+    top: 5px;
+    font-size: 50px;
+}
+
+.login-container .form {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    top: 50%;
+    right: 50%;
+    transform: translate(+50%, -40%);
+    border-radius: 10px;
+}
+
+.login-container .form .form-title {
+    position: absolute;
+    color: aliceblue;
+    font-size: 32px;
+    top: 5%;
+    left: 37%;
+}
+
+.login-container .form p {
+    position: absolute;
+    color: aliceblue;
+    top: 17%;
+    left: 11%;
+    font-weight: 500;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.login-container .form .login-details {
+    position: absolute;
+    width: 80%;
+    height: 65%;
+    bottom: 5%;
+    left: 11%;
+}
+
+.login-details .username,
+.login-details .password {
+    position: relative;
+}
+
+.login-container .form .login-details .username input,
+.login-container .form .login-details .password input {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    color: aliceblue;
+    margin-bottom: 20px;
+    outline: none;
+    background: transparent;
+    border-color: aliceblue;
+    border-top: 0;
+    border-left: 0;
+    border-width: 1px;
+}
+
+.login-container .form .login-details .username label,
+.login-container .form .login-details .password label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+    font-size: 16px;
+    color: aliceblue;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.form .login-details .username input:focus~label,
+.form .login-details .username input:valid~label {
+    top: -30px;
+    left: -10px;
+    color: aliceblue;
+    font-size: 16px;
+}
+
+.form .login-details .password input:focus~label,
+.form .login-details .password input:valid~label {
+    top: -30px;
+    left: -10px;
+    color: aliceblue;
+    font-size: 16px;
+}
+
+.login-container .form .login-details .username input:focus,
+.login-container .form .login-details .password input:focus {
+    box-shadow: 0 3px 6px aliceblue;
+}
+
+.login-details button {
+    position: relative;
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    color: aliceblue;
+    background-color: transparent;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    left: 29%;
+    top: 5px;
+}
+
+.login-details button:hover {
+    background: aliceblue;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px aliceblue, 0 0 25px aliceblue, 0 0 50px aliceblue, 0 0 100px aliceblue;
+}
+
+.login-details button span {
+    position: absolute;
+    display: block;
+}
+
+.login-details button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, aliceblue);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.login-details button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, aliceblue);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.login-details button span:nth-child(3) {
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, aliceblue);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.login-details button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, aliceblue);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+.login-container .form .signin-gg {
+    height: 30px;
+    width: 300px;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+.login-container .form .signin-gg .signin-gg-btn {
+    display: flex;
+    background-color: transparent;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 100%;
+    justify-content: center;
+    gap: 10px;
+    border: solid white 1px;
+    align-items: center;
+    transition: ease-in-out 0.2s;
+}
+
+.login-container .form .signin-gg .signin-gg-btn:hover {
+    background-color: lightgray;
+}
+
+.login-container .register-para p {
+    position: absolute;
+    left: 0;
+    top: 75%;
+    text-align: center;
+    width: 100%;
+}
+
+
+.login-container .register-para p {
+    text-decoration: none;
+    text-transform: none;
+    color: aliceblue;
+}
+
+.login-container .register-para p .register {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: aliceblue;
+}
+
+.login-container .register-para p .register:active {
+    color: aliceblue;
+}

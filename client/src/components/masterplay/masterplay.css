@@ -1,0 +1,209 @@
+.master-play {
+    width: 100%;
+    height: 10%;
+    background-color: #000000;
+    bottom: 0px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.master-play .wave {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.master-play .wave .wave1 {
+    width: 4px;
+    border-radius: 5px 5px 0px 0px;
+    height: 10px;
+    background-color: white;
+    margin-right: 3px;
+    animation: wave 0.5s linear infinite;
+}
+
+.master-play .wave .wave1:nth-child(2) {
+    height: 13px;
+    animation-delay: 0.1s;
+
+}
+
+.master-play .wave .wave1:nth-child(3) {
+    height: 8px;
+    animation-delay: 0.7s;
+
+}
+
+@keyframes wave {
+    0% {
+        height: 10px;
+    }
+
+    50% {
+        height: 18px;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+.master-play img {
+    width: 40px;
+    height: 40px;
+}
+
+.master-play h5 {
+    width: 130px;
+    color: aliceblue;
+    margin-left: 10px;
+    line-height: 17px;
+}
+
+.master-play h5 .sub-title {
+    width: 130px;
+    color: grey;
+}
+
+.master-play .start-play-end {
+    font-size: 25px;
+    margin: 0px 20px 0px 60px;
+    color: aliceblue;
+}
+
+.master-play .start-play-end .icon {
+    cursor: pointer;
+    outline: none;
+}
+
+.master-play .start-play-end .icon:nth-child(2) {
+    border: 1px solid rgb(105, 105, 170, 0.1);
+    border-radius: 50%;
+    padding: 1px 3px 0px 6px;
+    margin: 0px 5px;
+    transition: .3s linear;
+}
+
+.master-play span {
+    color: white;
+    width: 32px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.master-play #cur-start {
+    margin-left: 20px;
+}
+
+.master-play .bar {
+    position: relative;
+    width: 43%;
+    height: 2px;
+    background: rgb(105, 105, 170, 0.1);
+    margin: 0px 15px 0px 10px;
+}
+
+.master-play .bar .bar2 {
+    position: absolute;
+    background-color: aliceblue;
+    width: 20%;
+    height: 100%;
+    top: 0;
+}
+
+.master-play .bar .dot {
+    position: absolute;
+    background-color: aliceblue;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    left: 125px;
+    top: -1px;
+    transition: 1s linear;
+}
+
+.master-play .bar .dot::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+    box-shadow: inset 0px 0px 3px aliceblue;
+}
+
+.master-play .bar input {
+    position: absolute;
+    width: 100%;
+    top: -6px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: 3s linear;
+    opacity: 0;
+}
+
+.master-play .vol {
+    position: relative;
+    width: 100px;
+    height: 2px;
+    margin-left: 50px;
+    background: rgb(105, 105, 170, 0.1)
+}
+
+.master-play .vol .icon {
+    position: relative;
+    color: aliceblue;
+    font-size: 25px;
+    top: -14px;
+    left: -30px;
+}
+
+.master-play .vol input {
+    position: absolute;
+    width: 100%;
+    top: -10px;
+    left: 0px;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: 3s linear;
+    opacity: 0;
+}
+
+.master-play .vol .vol-bar {
+    position: absolute;
+    background-color: aliceblue;
+    width: 50%;
+    height: 100%;
+    top: 0px;
+}
+
+.master-play .vol .dot {
+    position: absolute;
+    background-color: aliceblue;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    left: 50px;
+    top: -1px;
+    transition: 1s linear;
+}
+
+.master-play .vol .dot::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+    box-shadow: inset 0px 0px 3px aliceblue;
+}

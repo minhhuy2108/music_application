@@ -1,0 +1,120 @@
+.register-container {
+    width: 100vw;
+    height: 100vh;
+    background: url(../../assets/piano.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register-container .register-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 400px;
+    height: 490px;
+    /* border: 1px solid black; */
+    border-radius: 20px 20px;
+    box-shadow: 0px 0px 9px black;
+}
+
+.register-container .register-form h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8%;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.register-container .register-form .register-data-field {
+    position: absolute;
+    bottom: 7%;
+    height: 68%;
+    width: 100%;
+    /* border: 1px solid black; */
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.register-container .register-form .register-data-field li {
+    /* border: 1px solid red; */
+    position: relative;
+    width: 90%;
+}
+
+.register-container .register-form .register-data-field li input {
+    width: 100%;
+    height: 55px;
+    border-radius: 15px 15px;
+    border: 1px solid #d8d8d8;
+    outline: none;
+    text-indent: 50px;
+    margin-top: 10px;
+}
+
+.register-container .register-form .register-data-field li input:focus {
+    border-color: #125eaaec;
+    box-shadow: 0 3px 6px #dedede;
+}
+
+.register-container .register-form .register-submit {
+    cursor: pointer;
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 180px;
+    border-radius: 20px 20px;
+    border: none;
+    background-color: #4c8cccec;
+    color: white;
+    font-size: 20px;
+}
+
+.register-container .register-form .register-submit:hover {
+    background-color: #125eaaec;
+}
+
+.register-container .register-form .register-submit:active {
+    background-color: #002b55dd;
+}
+
+.register-container .direct-login {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 27px;
+    color: grey;
+    font-size: 12px;
+    /* border: 1px solid red; */
+    bottom: 0;
+}
+
+.register-container .direct-login .login-link {
+    text-decoration: none;
+    color: #0c7bebec;
+}
+
+.register-container .direct-login .login-link:active {
+    color: #033a72ec;
+}
+
+.register-container .register-form .register-data-field li .eye {
+    position: absolute;
+    top: 21%;
+    right: 3%;
+    /* background-image: url('/src/Components/Assets/eye.png'); */
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}

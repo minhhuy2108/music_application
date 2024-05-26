@@ -59,7 +59,7 @@ export default function SignUp() {
                 <button className='register-submit'>Sign Up</button>
                 <p className="direct-login">
                     Already a memeber?
-                    <Link className='login-link' to='/login'> Log in</Link>
+                    <Link className='login-link' to='/login'> Sign Up</Link>
                 </p>
             </form>
         </div>

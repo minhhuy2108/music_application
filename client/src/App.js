@@ -8,9 +8,9 @@ import MenuSide from './components/menuside'
 import MasterPlay from './components/masterplay'
 import Login from './screen/login'
 import SignUp from './screen/signup'
-import axios from 'axios'
 import { getAuth } from 'firebase/auth'
 import { app } from './config/firebase.config'
+import { validateUser } from "./api";
 
 
 const App = () => {
@@ -23,7 +23,10 @@ const App = () => {
       if (userCred) {
         userCred.getIdToken().then((token) => {
           console.log(token);
-        })
+          validateUser(token).then((data) => {
+            console.log(data);
+          });
+        });
       } else {
         setAuth(false)
         window.localStorage.setItem('auth', 'false');

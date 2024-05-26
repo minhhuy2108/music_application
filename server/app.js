@@ -3,11 +3,12 @@ const app = express()
 const route = require('./routes/index')
 require('dotenv').config()
 
-
+const cors = require('cors')
+app.use(cors({ origin: true }))
 const db = require('./config/db/index')
 db.connect()
 
-// const cors = require('cors')
+
 route(app)
 
 app.listen(4000, () => console.log('Listening to port 4000'))

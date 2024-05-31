@@ -5,13 +5,15 @@ import MenuButton from '../menubutton';
 import { GoHome } from "react-icons/go";
 import { RiSearchLine } from "react-icons/ri";
 import SongItem from '../songitem';
+import { GoHomeFill } from "react-icons/go";
+import { RiSearchFill } from "react-icons/ri";
 
 export default function MenuSide() {
     return (
         <div className='menu-side'>
             <div className='menu-button-container'>
-                <MenuButton title='Home' to='/' icon={<GoHome size={30} />} />
-                <MenuButton title='Search' to='/search' icon={<RiSearchLine size={30} />} />
+                <MenuButton title='Home' to='/' icon={<GoHome size={30} />} iconActive={<GoHomeFill size={30} />} />
+                <MenuButton title='Search' to='/search' icon={<RiSearchLine size={30} />} iconActive={<RiSearchFill size={30} />} />
             </div>
             <div className='library-container'>
                 <div className='song-container'>

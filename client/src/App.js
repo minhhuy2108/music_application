@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from './screen/home'
 import Search from './screen/search'
 import './App.css'
@@ -13,6 +13,7 @@ import { app } from './config/firebase.config'
 import { validateUser } from "./api";
 import { useStateValue } from './context/StateProvider'
 import { actionType } from './context/reducer'
+import { Dashboard } from './components/dashboard'
 
 
 const App = () => {
@@ -53,8 +54,10 @@ const App = () => {
         path='*'
         element={
           <MainPage >
-            <Route path='/' element={<Home />} />
+            <Route path='/*' element={<Home />} />
             <Route path='/search' element={<Search />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+
           </MainPage>
         } >
       </Route>

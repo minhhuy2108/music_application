@@ -5,6 +5,8 @@ require('dotenv').config()
 
 const cors = require('cors')
 app.use(cors({ origin: true }))
+app.use(express.json())
+
 const db = require('./config/db/index')
 db.connect()
 

@@ -1,0 +1,235 @@
+.dashsong {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.add-search {
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ic-add {
+    display: flex;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-color: #D1D5DB;
+    cursor: pointer;
+}
+
+.ic-clean {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    cursor: pointer;
+}
+
+.song-area {
+    position: relative;
+    padding: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    border: 10px white;
+    width: 100%;
+}
+
+.song-count-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.song-counter {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: #D1D5DB;
+}
+
+.songs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.songs:hover {
+    overflow-y: auto;
+}
+
+.songs::-webkit-scrollbar {
+    width: 7px;
+}
+
+.songs::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.song-card {
+    display: flex;
+    position: relative;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0px 50px 20px 0px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    width: 10rem;
+    background-color: #F3F4F6;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    flex: 0 0 auto;
+    justify-content: center;
+}
+
+.song-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.count-song {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+.yes-no {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.yes-del {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #ffffff;
+}
+
+
+.yes-del:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+
+.thumbnail-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 10rem;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail {
+    object-fit: cover;
+    border-radius: 0.5rem;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+}
+
+.del-area {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px);
+}
+
+.delete-song-alert {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.no-del {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #ffffff;
+    background-color: #9CA3AF;
+}
+
+.no-del:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.song-i4 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+.artist-song {
+    display: block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #9CA3AF;
+}
+
+.bin-container {
+    display: flex;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.bin {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #3038ca;
+    filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+}
+
+.bin:hover {
+    color: #000000;
+}

@@ -1,7 +1,5 @@
 .btn-body {
     color: rgb(148, 154, 160);
-    margin-left: 10px;
-    margin-bottom: 10px;
     cursor: pointer;
     transition: .1s linear;
     font-size: large;
@@ -12,8 +10,6 @@
 
 .btn-body-active {
     color: rgb(255, 255, 255);
-    margin-left: 10px;
-    margin-bottom: 10px;
     cursor: pointer;
     transition: .3s linear;
     font-size: large;

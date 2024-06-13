@@ -1,0 +1,75 @@
+.dashboard {
+    width: calc(75% - 13.5px);
+    height: calc(90% - 7.5px);
+    background-color: #111727;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 7.5px;
+}
+
+.dashboard-container {
+    display: flex;
+    padding: 1rem;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    bottom: 30px;
+}
+
+
+.count-box {
+    display: flex;
+    position: relative;
+    padding: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-color: #fdfeff;
+    color: #fdfeff;
+    width: 100%;
+
+}
+
+.count-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+}
+
+.count-tag-span {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+.count {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+.user-features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.feature {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}

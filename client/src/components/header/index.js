@@ -41,7 +41,7 @@ export const Header = () => {
                 </p>
 
                 <hr />
-                {user?.user?.role === 'admin' && (<NavLink to={'/dashboard'}>
+                {user?.user?.role === 'admin' && (<NavLink to={'/dashboard-users'}>
                     <>
                         <p className="dropdown-item">
                             Dashboard

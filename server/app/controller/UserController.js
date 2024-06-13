@@ -27,6 +27,44 @@ class UserController {
             return res.status(505).json({ message: error })
         }
     }
+
+    getUsers = async (req, res) => {
+
+        const cursor = await user.find().sort({ createdAt: 1 });
+        if (cursor) {
+            res.status(200).send({ success: true, data: cursor });
+        } else {
+            res.status(200).send({ success: true, msg: "No Data Found" });
+        }
+    };
+    updateRole = async (req, res) => {
+        console.log(req.body.data.role, req.params.userId);
+        const filter = { _id: req.params.userId };
+        const role = req.body.data.role;
+
+        const options = {
+            upsert: true,
+            new: true,
+        };
+
+        try {
+            const result = await user.findOneAndUpdate(filter, { role: role }, options);
+            res.status(200).send({ user: result });
+        } catch (err) {
+            res.status(400).send({ success: false, msg: err });
+        }
+    };
+
+    delete = async (req, res) => {
+        const filter = { _id: req.params.userId };
+
+        const result = await user.deleteOne(filter);
+        if (result.deletedCount === 1) {
+            res.status(200).send({ success: true, msg: "Data Deleted" });
+        } else {
+            res.status(200).send({ success: false, msg: "Data Not Found" });
+        }
+    };
 }
 
 const newUserData = async (decodeValue, req, res) => {

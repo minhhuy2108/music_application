@@ -13,7 +13,10 @@ import { app } from './config/firebase.config'
 import { validateUser } from "./api";
 import { useStateValue } from './context/StateProvider'
 import { actionType } from './context/reducer'
-import { Dashboard } from './components/dashboard'
+import { DashboardUser } from './components/dashboarduser'
+import { DashboardNav } from './components/dashboardnav'
+import { DashboardSong } from './components/dashboardsong'
+import { DashboardArtist } from './components/dashboardartist'
 
 
 const App = () => {
@@ -56,8 +59,10 @@ const App = () => {
           <MainPage >
             <Route path='/*' element={<Home />} />
             <Route path='/search' element={<Search />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-
+            <Route path='/dashboard-users' element={<DashboardUser />} />
+            <Route path='/dashboard-songs' element={<DashboardSong />} />
+            <Route path='/dashboard-artists' element={<DashboardArtist />} />
+            <Route path='/dashboard-albums' element={<DashboardSong />} />
           </MainPage>
         } >
       </Route>
@@ -79,5 +84,6 @@ function MainPage({ children }) {
     </header>
   )
 }
+
 
 export default App

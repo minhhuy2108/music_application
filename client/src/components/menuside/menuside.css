@@ -45,9 +45,19 @@
     width: 100%;
     position: absolute;
     bottom: 0px;
-    overflow: auto;
+    overflow: hidden;
 }
 
-::-webkit-scrollbar {
-    width: 50px;
+.song-container:hover {
+    overflow-y: auto;
+}
+
+.song-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+.song-container::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(76, 133, 226, 0.5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }

@@ -46,8 +46,7 @@ export const DashboardSong = () => {
                     <input
                         type="text"
                         placeholder="Search here"
-                        className={`w-52 px-4 py-2 border ${isFocus ? "border-gray-500 shadow-md" : "border-gray-300"
-                            } rounded-md bg-transparent outline-none duration-150 transition-all ease-in-out text-base text-textColor font-semibold`}
+                        className={` ${isFocus ? "search-box-focus" : "search-box"}`}
                         value={songFilter}
                         onChange={(e) => setSongFilter(e.target.value)}
                         onBlur={() => setIsFocus(false)}

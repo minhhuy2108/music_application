@@ -3,5 +3,9 @@ export const initialState = {
     allUsers: null,
     allSongs: null,
     allAlbums: null,
-    artists: null
+    artists: null,
+    artistFilter: null,
+    languageFilter: null,
+    albumFilter: null,
+    filterTerm: "all",
 };

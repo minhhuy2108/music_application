@@ -38,7 +38,7 @@ export const DashboardSong = () => {
             <div className="dashsong">
                 <div className="add-search">
                     <NavLink
-                        to={"/dashboard/newSong"}
+                        to={"/dashboard-newSong"}
                         className="ic-add"
                     >
                         <IoAdd />
@@ -145,7 +145,7 @@ export const SongCard = ({ data, index }) => {
             whileTap={{ scale: 0.8 }}
             initial={{ opacity: 0, translateX: -50 }}
             animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
             className="song-card"
             onClick={addSongToContext}
         >

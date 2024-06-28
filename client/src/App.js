@@ -14,9 +14,10 @@ import { validateUser } from "./api";
 import { useStateValue } from './context/StateProvider'
 import { actionType } from './context/reducer'
 import { DashboardUser } from './components/dashboarduser'
-import { DashboardNav } from './components/dashboardnav'
 import { DashboardSong } from './components/dashboardsong'
 import { DashboardArtist } from './components/dashboardartist'
+import { DashboardAlbum } from './components/dashboardalbum'
+import { DashboardNewSong } from './components/dashboardnewsong'
 
 
 const App = () => {
@@ -62,7 +63,8 @@ const App = () => {
             <Route path='/dashboard-users' element={<DashboardUser />} />
             <Route path='/dashboard-songs' element={<DashboardSong />} />
             <Route path='/dashboard-artists' element={<DashboardArtist />} />
-            <Route path='/dashboard-albums' element={<DashboardSong />} />
+            <Route path='/dashboard-albums' element={<DashboardAlbum />} />
+            <Route path='/dashboard-newSong' element={<DashboardNewSong />} />
           </MainPage>
         } >
       </Route>

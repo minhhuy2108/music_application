@@ -13,11 +13,14 @@ import { DashboardNav } from '../dashboardnav'
 import FilterButton from '../filterbutton'
 import { filterByLanguage, filters } from "../../support/supportfunctions";
 import { actionType } from "../../context/reducer";
-import { getAllAlbums, getAllArtists, saveNewSong, getAllSongs } from '../../api';
+import { getAllAlbums, getAllArtists, saveNewSong, getAllSongs, saveNewArtist, saveNewAlbum } from '../../api';
 import { useStateValue } from '../../context/StateProvider'
 import { progress, motion } from 'framer-motion'
 import { BiCloudUpload } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
+import AlertSuccess from "../alertsuccess";
+import AlertError from "../alerterror";
+
 
 export const DashboardNewSong = () => {
     const [setAlert, setSetAlert] = useState(null);
@@ -28,11 +31,25 @@ export const DashboardNewSong = () => {
     const [songImageUrl, setSongImageUrl] = useState(null);
     const [isAudioLoading, setIsAudioLoading] = useState(false);
     const [audioAsset, setAudioAsset] = useState(null);
+
+    const [artistImageCover, setArtistImageCover] = useState(null)
+    const [artistUploadingProgress, setArtistUploadingProgress] = useState(0)
+    const [isArtistUploading, setIsArtistUploading] = useState(false)
+    const [artistName, setArtistName] = useState("")
+    const [twitter, setTwitter] = useState("");
+    const [instagram, setInstagram] = useState("");
+
+    const [albumImageCover, setAlbumImageCover] = useState(null)
+    const [albumUploadingProgress, setAlbumUploadingProgress] = useState(0)
+    const [isAlbumUploading, setIsAlbumUploading] = useState(false)
+    const [albumName, setAlbumName] = useState("")
+
     const audioRef = useRef();
     const [
         {
             artists,
             allAlbums,
+            allSongs,
             albumFilter,
             artistFilter,
             filterTerm,
@@ -115,6 +132,56 @@ export const DashboardNewSong = () => {
             dispatch({ type: actionType.SET_FILTER_TERM, filterTerm: null });
         }
     };
+    const saveArtist = () => {
+        if (!artistImageCover || !artistName) {
+
+        } else {
+            setIsArtistUploading(true)
+            const data = {
+                name: artistName,
+                imageURL: artistImageCover,
+                twitter: twitter,
+                instagram: instagram,
+            };
+
+            saveNewArtist(data).then((res) => {
+                getAllArtists().then((data) => {
+                    dispatch({ type: actionType.SET_ARTISTS, artists: data.data });
+                });
+            });
+
+            setIsArtistUploading(false)
+            setArtistImageCover(null)
+            setArtistName("")
+            setTwitter("")
+            setInstagram("")
+
+        }
+    }
+
+    const saveAlbum = () => {
+        if (!albumImageCover || !albumName) {
+
+        }
+        else {
+            setIsAlbumUploading(true)
+
+            const data = {
+                name: albumName,
+                imageURL: albumImageCover,
+            }
+            saveNewAlbum(data).then(() => {
+                getAllAlbums().then((data) => {
+                    dispatch({ type: actionType.SET_ALL_ALBUMNS, allAlbums: data.data });
+                });
+            })
+
+            setIsAlbumUploading(false)
+            setAlbumImageCover(null)
+            setAlbumName("")
+        }
+    }
+
     return (
         <div className='dashboard'>
             <Header></Header>
@@ -209,9 +276,167 @@ export const DashboardNewSong = () => {
                             </motion.button>
                         )}
                     </div>
+
                 </div>
 
+                {/*Image uploader */}
+                <p>Artist Details</p>
+                <div className="img-00">
+                    {isArtistUploading && <ImageLoader progress={artistUploadingProgress} />}
+                    {!isArtistUploading && (
+                        <>
+                            {!artistImageCover ? (
+                                <ImageUpLoader
+                                    setImageUrl={setArtistImageCover}
+                                    setAlert={setSetAlert}
+                                    alertMsg={setAlertMsg}
+                                    isLoading={setIsArtistUploading}
+                                    setProgress={setArtistUploadingProgress}
+                                    isImage={true}
+                                />
+                            ) : (
+                                <div className="img-01">
+                                    <img
+                                        src={artistImageCover}
+                                        alt="uploaded image"
+                                        className="img-02"
+                                    />
+                                    <button
+                                        type="button"
+                                        className="del-but"
+                                        onClick={() => {
+                                            deleteImageObject(artistImageCover, true);
+                                        }}
+                                    >
+                                        <MdDelete className="text-white" />
+                                    </button>
+                                </div>
+                            )}
+                        </>
+                    )}
+                </div>
+                <input
+                    type="text"
+                    placeholder="Artist name"
+                    className="new-song-2"
+                    value={artistName}
+                    onChange={(e) => setArtistName(e.target.value)}
+                />
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div className="social-01">
+                    <p className="social-02">
+                        www.twitter.com/
+                    </p>
+                    <input
+                        type="text"
+                        placeholder="your id"
+                        className="w-full text-base font-semibold text-textColor outline-none bg-transparent"
+                        value={twitter}
+                        onChange={(e) => setTwitter(e.target.value)}
+                    />
+                </div>
+
+                <div className="social-01">
+                    <p className="social-02">
+                        www.instagram.com/
+                    </p>
+                    <input
+                        type="text"
+                        placeholder="your id"
+                        className="w-full text-base font-semibold text-textColor outline-none bg-transparent"
+                        value={instagram}
+                        onChange={(e) => setInstagram(e.target.value)}
+                    />
+                </div>
+                <div className="send-but-01">
+                    {isArtistUploading ? (
+                        <DisabledButton />
+                    ) : (
+                        <motion.button
+                            whileTap={{ scale: 0.75 }}
+                            className="send-but"
+                            onClick={saveArtist}
+                        >
+                            Save Artist
+                        </motion.button>
+                    )}
+                </div>
+
+
+                {/*Album Information */}
+                <p>Album Details</p>
+                <div className="img-00">
+                    {isAlbumUploading && <ImageLoader progress={albumUploadingProgress} />}
+                    {!isAlbumUploading && (
+                        <>
+                            {!albumImageCover ? (
+                                <ImageUpLoader
+                                    setImageUrl={setAlbumImageCover}
+                                    setAlert={setSetAlert}
+                                    alertMsg={setAlertMsg}
+                                    isLoading={setIsAlbumUploading}
+                                    setProgress={setAlbumUploadingProgress}
+                                    isImage={true}
+                                />
+                            ) : (
+                                <div className="img-01">
+                                    <img
+                                        src={albumImageCover}
+                                        alt="uploaded image"
+                                        className="img-02"
+                                    />
+                                    <button
+                                        type="button"
+                                        className="del-but"
+                                        onClick={() => {
+                                            deleteImageObject(albumImageCover, true);
+                                        }}
+                                    >
+                                        <MdDelete className="text-white" />
+                                    </button>
+                                </div>
+                            )}
+                        </>
+                    )}
+                </div>
+                {/*Album Name */}
+                <input
+                    type="text"
+                    placeholder="Album Name"
+                    className="w-full text-base font-semibold text-textColor outline-none bg-transparent"
+                    value={albumName}
+                    onChange={(e) => setAlbumName(e.target.value)}
+                />
+                {/*Save Album */}
+                <div className="send-but-01">
+                    {isAlbumUploading ? (
+                        <DisabledButton />
+                    ) : (
+                        <motion.button
+                            whileTap={{ scale: 0.75 }}
+                            className="send-but"
+                            onClick={saveAlbum}
+                        >
+                            Save Album
+                        </motion.button>
+                    )}
+                </div>
+
+
+
             </div>
+            {setAlert && (
+                <>
+                    {setAlert === "success" ? (
+                        <AlertSuccess msg={alertMsg} />
+                    ) : (
+                        <AlertError msg={alertMsg} />
+                    )}
+                </>
+            )}
         </div >
     )
 }

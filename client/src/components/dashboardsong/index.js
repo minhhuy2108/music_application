@@ -8,8 +8,8 @@ import { AiOutlineClear } from "react-icons/ai";
 import { actionType } from '../../context/reducer';
 import { useStateValue } from '../../context/StateProvider';
 import { getAllSongs, deleteSongById } from '../../api';
-import AlertSuccess from "./AlertSuccess";
-import AlertError from "./AlertError";
+import AlertSuccess from "../alertsuccess";
+import AlertError from "../alerterror";
 import './dashboardsong.css'
 
 

@@ -10,7 +10,7 @@ import Login from './screen/login'
 import SignUp from './screen/signup'
 import { getAuth } from 'firebase/auth'
 import { app } from './config/firebase.config'
-import { validateUser } from "./api";
+import { validateUser } from "./api"
 import { useStateValue } from './context/StateProvider'
 import { actionType } from './context/reducer'
 import { DashboardUser } from './components/dashboarduser'
@@ -18,6 +18,7 @@ import { DashboardSong } from './components/dashboardsong'
 import { DashboardArtist } from './components/dashboardartist'
 import { DashboardAlbum } from './components/dashboardalbum'
 import { DashboardNewSong } from './components/dashboardnewsong'
+
 
 
 const App = () => {

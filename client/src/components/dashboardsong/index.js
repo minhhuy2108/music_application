@@ -67,15 +67,6 @@ export const DashboardSong = () => {
                     )}
                 </div>
                 <div className="song-area">
-                    <div className="song-count-tag">
-                        <p className="song-counter">
-                            <span className="count-song">
-                                Count :{" "}
-                            </span>
-                            {filteredSongs ? filteredSongs?.length : allSongs?.length}
-                        </p>
-                    </div>
-
                     <SongContainer data={filteredSongs ? filteredSongs : allSongs} />
                 </div>
             </div>
@@ -99,7 +90,7 @@ export const SongCard = ({ data, index }) => {
     const [alert, setAlert] = useState(false);
     const [alertMsg, setAlertMsg] = useState(null);
 
-    const [{ allSongs, song, isSongPlaying }, dispatch] = useStateValue();
+    const [{ song, isSongPlaying }, dispatch] = useStateValue();
 
     const addSongToContext = () => {
         if (!isSongPlaying) {

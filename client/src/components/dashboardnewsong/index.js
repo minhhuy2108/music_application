@@ -75,6 +75,8 @@ export const DashboardNewSong = () => {
         if (action === "image") {
             setIsImageLoading(true);
             setSongImageUrl(null);
+            setIsAlbumUploading(true)
+            setIsArtistUploading(true)
         } else {
             setIsAudioLoading(true);
             setAudioAsset(null);
@@ -88,6 +90,10 @@ export const DashboardNewSong = () => {
             }, 4000);
             setIsImageLoading(false);
             setIsAudioLoading(false);
+            setIsAlbumUploading(false)
+            setIsArtistUploading(false)
+            setAlbumImageCover(null)
+            setArtistImageCover(null)
         });
     };
 
@@ -279,6 +285,7 @@ export const DashboardNewSong = () => {
 
                 </div>
 
+                {/* Add New Artist $ Album*/}
                 {/*Image uploader */}
                 <p>Artist Details</p>
                 <div className="img-00">
@@ -441,6 +448,25 @@ export const DashboardNewSong = () => {
     )
 }
 
+export const AddNewArtist = () => {
+
+
+    return (
+        <div>
+
+        </div>
+    )
+}
+
+export const AddNewAlbum = () => {
+
+
+    return (
+        <div>
+
+        </div>
+    )
+}
 export const DisabledButton = () => {
     return (
         <button

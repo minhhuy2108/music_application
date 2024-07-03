@@ -8,4 +8,6 @@ export const initialState = {
     languageFilter: null,
     albumFilter: null,
     filterTerm: "all",
+    song: 0,
+    isSongPlaying: false,
 };

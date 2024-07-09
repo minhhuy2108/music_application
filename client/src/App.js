@@ -18,6 +18,8 @@ import { DashboardSong } from './components/dashboardsong'
 import { DashboardArtist } from './components/dashboardartist'
 import { DashboardAlbum } from './components/dashboardalbum'
 import { DashboardNewSong } from './components/dashboardnewsong'
+import { motion } from 'framer-motion'
+import { MusicPlayer } from './components/musicplayer'
 
 
 
@@ -77,13 +79,23 @@ const App = () => {
 }
 
 function MainPage({ children }) {
+  const [{ isSongPlaying }, dispatch] = useStateValue();
   return (
     <header>
       <MenuSide />
       <Routes>
         {children}
       </Routes>
-      <MasterPlay />
+      {isSongPlaying && (
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          className='music-player'
+        >
+          <MusicPlayer />
+        </motion.div>
+      )}
     </header>
   )
 }

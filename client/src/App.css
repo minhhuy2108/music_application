@@ -4,3 +4,15 @@ header {
     display: flex;
     position: relative;
 }
+
+.music-player {
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+}

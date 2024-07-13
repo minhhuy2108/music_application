@@ -29,12 +29,14 @@ code {
 }
 
 .rhap_play-pause-button {
-  color: #ffffff !important;
+  color: rgb(56, 147, 232) !important;
   transition: all 0.3s ease-in-out;
+
 }
 
 .rhap_play-pause-button:hover {
   transform: scale(1.2);
+  color: rgb(108, 173, 232) !important;
 }
 
 .rhap_forward-button,
@@ -43,6 +45,7 @@ code {
 .rhap_volume-button,
 .rhap_repeat-button {
   transition: all 0.3s ease-in-out;
+  color: rgb(56, 147, 232) !important;
 }
 
 .rhap_forward-button:hover,
@@ -51,16 +54,18 @@ code {
 .rhap_volume-button:hover,
 .rhap_repeat-button:hover {
   transform: scale(1.2);
-  color: #555 !important;
+  color: rgb(108, 173, 232) !important;
 }
 
 .rhap_progress-filled {
-  background-color: #ffffff !important;
+  color: rgb(108, 173, 232) !important;
+  background-color: rgb(108, 173, 232) !important;
+  ;
 }
 
 .rhap_progress-indicator,
 .rhap_volume-indicator {
-  background: #b4b4b4 !important;
+  background-color: rgb(37, 72, 199) !important;
 }
 
 .rhap_progress-indicator:hover,
@@ -70,5 +75,13 @@ code {
 
 .rhap_download-progress,
 .rhap_volume-bar {
-  background-color: #a29d9d33 !important;
+  background-color: #354c79 !important;
+}
+
+.rhap_time {
+  color: rgb(108, 173, 232) !important;
+}
+
+.rhap_progress-bar {
+  background-color: rgb(14, 12, 54) !important;
 }

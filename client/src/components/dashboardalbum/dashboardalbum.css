@@ -63,7 +63,7 @@
     align-items: center;
     border-radius: 0.5rem;
     width: 11rem;
-    background-color: #F3F4F6;
+    background-color: rgb(108, 173, 232);
     cursor: pointer;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
@@ -95,12 +95,12 @@
 .album-card-05 {
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: #9CA3AF;
+    color: #222324;
     cursor: pointer;
 }
 
 .album-card-05:hover {
-    color: #F87171;
+    color: #d7243c;
 }
 
 .album-card-06 {

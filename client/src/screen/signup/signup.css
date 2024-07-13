@@ -68,11 +68,11 @@
     bottom: 7%;
     left: 50%;
     transform: translateX(-50%);
-    height: 60px;
+    height: 40px;
     width: 180px;
     border-radius: 20px 20px;
     border: none;
-    background-color: #4c8cccec;
+    background-color: #050606ec;
     color: white;
     font-size: 20px;
 }

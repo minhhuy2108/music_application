@@ -1,0 +1,22 @@
+.navbtn {
+    color: rgb(108, 173, 232);
+    opacity: 0.7;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbtn:hover {
+    color: rgb(108, 173, 232);
+    opacity: 2;
+}
+
+.navbtn-active {
+    color: rgb(108, 173, 232);
+    cursor: pointer;
+    transition: .3s linear;
+    font-size: large;
+    font-weight: 600;
+    display: flex;
+    text-decoration: none;
+    text-transform: uppercase;
+}

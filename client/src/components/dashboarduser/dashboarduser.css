@@ -17,19 +17,17 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: white;
-    bottom: 30px;
+    color: rgb(108, 173, 232);
+    top: 150px;
+    /* border: #ffffff solid 1px; */
+    border-radius: 10px;
 }
 
 
 .count-box {
     display: flex;
     position: relative;
-    padding: 1rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    height: 50px;
     flex-direction: column;
     gap: 0.75rem;
     justify-content: flex-start;
@@ -63,9 +61,12 @@
 
 .user-features {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    gap: 20px;
+    border: rgb(108, 173, 232) solid 1px;
+    border-radius: 5px;
 }
 
 .feature {

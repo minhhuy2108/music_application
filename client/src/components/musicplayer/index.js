@@ -96,7 +96,7 @@ export const MusicPlayer = () => {
                     </>
                 )}
                 <motion.i whileTap={{ scale: 0.8 }} onClick={closeMusicPlayer}>
-                    <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
+                    <IoMdClose className="mp-11" />
                 </motion.i>
                 <div />
 

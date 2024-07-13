@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './menuside.css'
-// import logo from '../../assets/logo.png'
 import MenuButton from '../menubutton';
 import { GoHome } from "react-icons/go";
 import { RiSearchLine } from "react-icons/ri";
-import SongItem from '../songitem';
+import '../songitem/songitem.css'
 import { GoHomeFill } from "react-icons/go";
 import { RiSearchFill } from "react-icons/ri";
+import { getAllArtists } from '../../api';
+import { actionType } from '../../context/reducer';
+import { useStateValue } from '../../context/StateProvider';
+
 
 export default function MenuSide() {
+    const [{ artists }, dispatch] = useStateValue()
+    useEffect(() => {
+        if (!artists) {
+            getAllArtists().then((data) => {
+                dispatch({ type: actionType.SET_ARTISTS, artists: data.data });
+            });
+        }
+    }, []);
     return (
         <div className='menu-side'>
             <div className='menu-button-container'>
@@ -17,20 +28,28 @@ export default function MenuSide() {
             </div>
             <div className='library-container'>
                 <div className='song-container'>
-                    <SongItem numb='01' />
-                    <SongItem numb='02' />
-                    <SongItem numb='03' />
-                    <SongItem numb='04' />
-                    <SongItem numb='05' />
-                    <SongItem numb='06' />
-                    <SongItem numb='07' />
-                    <SongItem numb='08' />
-                    <SongItem numb='09' />
+
+                    {artists &&
+                        artists.map((artist, i) => (
+                            <MenuArtist key={artist._id} data={artist} index={i} />
+                        ))}
                 </div>
 
 
             </div>
 
         </div>
+    )
+}
+
+export const MenuArtist = ({ data, index }) => {
+    return (
+        <li>
+            <span> {index + 1} </span>
+            <img src={data?.imageURL} alt='music' />
+            <h5>
+                {data.name}
+            </h5>
+        </li>
     )
 }

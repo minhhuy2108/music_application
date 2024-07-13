@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import './login.css'
-import { Link } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 import { app } from '../../config/firebase.config';
 import { useNavigate } from 'react-router-dom'
@@ -63,8 +62,8 @@ const Login = ({ setAuth }) => {
                 <h1 className="form-title">
                     LOGIN
                 </h1>
-                <p>Enter your details below</p>
-                <form className="login-details" id="form-login" action='/'>
+                {/* <p>Enter your details below</p> */}
+                {/* <form className="login-details" id="form-login" action='/'>
                     <div className="username">
                         <input type="text" name="username" maxLength={20} id="username" required />
                         <label htmlFor="username">Username</label>
@@ -78,19 +77,19 @@ const Login = ({ setAuth }) => {
                         <span></span>
                         <span></span>
                         <span></span>Submit</button>
-                </form>
+                </form> */}
                 <div className='signin-gg'>
                     <div className='signin-gg-btn' onClick={loginWithGoogle}>
                         <FcGoogle />
                         Sign in with Google
                     </div>
                 </div>
-                <div className="register-para">
+                {/* <div className="register-para">
                     <p>
                         Don't have an account?
                         <Link className='register' to='/signup'> Signup</Link>
                     </p>
-                </div>
+                </div> */}
             </div>
         </div>
     )

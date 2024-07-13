@@ -1,5 +1,6 @@
 .btn-body {
-    color: rgb(148, 154, 160);
+    color: rgb(108, 173, 232) !important;
+    ;
     cursor: pointer;
     transition: .1s linear;
     font-size: large;
@@ -9,7 +10,7 @@
 }
 
 .btn-body-active {
-    color: rgb(255, 255, 255);
+    color: rgb(108, 173, 232) !important;
     cursor: pointer;
     transition: .3s linear;
     font-size: large;

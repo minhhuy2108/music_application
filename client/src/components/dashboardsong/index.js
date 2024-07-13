@@ -4,7 +4,6 @@ import { DashboardNav } from '../dashboardnav'
 import { IoAdd, IoTrash } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { motion } from 'framer-motion'
-import { AiOutlineClear } from "react-icons/ai";
 import { actionType } from '../../context/reducer';
 import { useStateValue } from '../../context/StateProvider';
 import { getAllSongs, deleteSongById } from '../../api';
@@ -31,6 +30,22 @@ export const DashboardSong = () => {
         }
     }, []);
 
+    useEffect(() => {
+        if (songFilter.length > 0) {
+            const filtered = allSongs.filter(
+                (data) =>
+                    data.artist.toLowerCase().includes(songFilter) ||
+                    data.artist.includes(songFilter) ||
+                    data.language.toLowerCase().includes(songFilter) ||
+                    data.name.toLowerCase().includes(songFilter) ||
+                    data.name.includes(songFilter)
+            );
+            setFilteredSongs(filtered);
+        } else {
+            setFilteredSongs(null);
+        }
+    }, [songFilter]);
+
     return (
         <div className='dashboard'>
             <Header></Header>
@@ -52,19 +67,7 @@ export const DashboardSong = () => {
                         onBlur={() => setIsFocus(false)}
                         onFocus={() => setIsFocus(true)}
                     />
-                    {songFilter && (
-                        <motion.i
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            whileTap={{ scale: 0.75 }}
-                            onClick={() => {
-                                setSongFilter("");
-                                setFilteredSongs(null);
-                            }}
-                        >
-                            <AiOutlineClear className="ic-clean" />
-                        </motion.i>
-                    )}
+
                 </div>
                 <div className="song-area">
                     <SongContainer data={filteredSongs ? filteredSongs : allSongs} />
@@ -133,12 +136,11 @@ export const SongCard = ({ data, index }) => {
     };
     return (
         <motion.div
-            whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 1 }}
             initial={{ opacity: 0, translateX: -50 }}
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
             className="song-card"
-            onClick={addSongToContext}
         >
             {isDeleted && (
                 <motion.div
@@ -174,6 +176,7 @@ export const SongCard = ({ data, index }) => {
                     src={data.imageURL}
                     alt=""
                     className="thumbnail"
+                    onClick={addSongToContext}
                 />
             </div>
 
@@ -183,7 +186,7 @@ export const SongCard = ({ data, index }) => {
             </p>
 
             <div className="bin-container">
-                <motion.i whileTap={{ scale: 0.75 }} onClick={() => setIsDeleted(true)}>
+                <motion.i whileTap={{ scale: 0.9 }} onClick={() => setIsDeleted(true)}>
                     <IoTrash className="bin" />
                 </motion.i>
             </div>

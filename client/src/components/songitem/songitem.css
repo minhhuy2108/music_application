@@ -12,7 +12,7 @@
 .song-container li span {
     font-size: 12px;
     font-weight: 600;
-    color: #4c5262;
+    color: rgb(138, 179, 220) !important;
 }
 
 
@@ -25,7 +25,7 @@
 .song-container li h5 {
     font-size: 15px;
     margin-left: 15px;
-    color: aliceblue;
+    color: rgb(108, 173, 232) !important;
 }
 
 .song-container li h5 .sub-title {

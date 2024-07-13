@@ -27,7 +27,7 @@ export const DashboardUser = () => {
             <Header></Header>
             <DashboardNav></DashboardNav>
             <div className="dashboard-container">
-                <div className="count-box">
+                {/* <div className="count-box">
                     <div className="count-tag">
                         <p className="count-tag-span">
                             <span className="count">
@@ -36,7 +36,7 @@ export const DashboardUser = () => {
                             {filtereUsers ? filtereUsers?.length : allUsers?.length}
                         </p>
                     </div>
-                </div>
+                </div> */}
                 <div className="user-features">
 
                     <p className="feature">Avatar</p>
@@ -53,7 +53,7 @@ export const DashboardUser = () => {
                 </div>
                 {
                     allUsers && (allUsers?.map((data, i) => (
-                        <UserCard data={data} key={data} index={i} />
+                        <UserCard data={data} key={i} index={i} />
                     ))
                     )
                 }

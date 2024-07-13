@@ -31,23 +31,16 @@ export const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
                 className="user-dropdown">
-                <NavLink to={"/userProfile"}>
-                    <p className="dropdown-item">
-                        Profile
-                    </p>
-                </NavLink>
-                <p className="dropdown-item">
-                    My Favourites
-                </p>
 
-                <hr />
                 {user?.user?.role === 'admin' && (<NavLink to={'/dashboard-users'}>
                     <>
                         <p className="dropdown-item">
                             Dashboard
+                            <hr />
                         </p>
                     </>
                 </NavLink>)}
+
                 <p className="dropdown-item" onClick={logout}>
                     Sign Out
                 </p>

@@ -9,6 +9,9 @@ import { motion } from 'framer-motion'
 import { MdDelete } from 'react-icons/md'
 import AlertError from '../alerterror'
 import AlertSuccess from '../alertsuccess'
+import { NavLink } from 'react-router-dom'
+import { IoAdd } from 'react-icons/io5'
+
 
 
 export const DashboardArtist = () => {
@@ -27,6 +30,12 @@ export const DashboardArtist = () => {
             <Header></Header>
             <DashboardNav></DashboardNav>
             <div className="artist-01">
+                <NavLink
+                    to={"/dashboard-newArtist"}
+                    className="ic-add"
+                >
+                    <IoAdd />
+                </NavLink>
                 <div className="artist-02">
                     <ArtistContainer data={artists} />
                 </div>

@@ -10,4 +10,5 @@ export const initialState = {
     filterTerm: "all",
     song: 0,
     isSongPlaying: false,
+    searchTerm: "",
 };

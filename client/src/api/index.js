@@ -50,6 +50,18 @@ export const getAllArtists = async () => {
         return null;
     }
 };
+export const getOneArtist = async (id) => {
+    try {
+        const res = await axios.get(`${baseURL}api/artists/getOne`, {
+            params: {
+                id
+            }
+        });
+        return res.data;
+    } catch (error) {
+        return null;
+    }
+};
 export const changingUserRole = async (userId, role) => {
     try {
         const res = axios.put(`${baseURL}api/users/updateRole/${userId}`, {
@@ -117,6 +129,16 @@ export const saveNewAlbum = async (data) => {
     try {
         const res = axios.post(`${baseURL}api/albums/save`, { ...data });
         return (await res).data.savedAlbum;
+    } catch (error) {
+        return null;
+    }
+};
+
+export const getSongsByArtist = async (data) => {
+    try {
+        const res = axios.get(`${baseURL}api/songs/getSongByArtist`, { params: { artist: data } });
+        console.log(res);
+        return (await res).data.songsbyartist;
     } catch (error) {
         return null;
     }

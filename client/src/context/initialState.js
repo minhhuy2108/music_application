@@ -11,4 +11,5 @@ export const initialState = {
     song: 0,
     isSongPlaying: false,
     searchTerm: "",
+    songByArtist: null,
 };

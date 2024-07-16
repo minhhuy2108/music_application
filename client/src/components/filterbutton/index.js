@@ -16,16 +16,8 @@ const FilterButton = ({ flag, filterData }) => {
         if (flag === "Artist") {
             dispatch({ type: actionType.SET_ARTIST_FILTER, artistFilter: name });
         }
-        if (flag === "Language") {
-            dispatch({ type: actionType.SET_LANGUAGE_FILTER, languageFilter: name });
-        }
-
-        if (flag === "Albums") {
+        if (flag === "Album") {
             dispatch({ type: actionType.SET_ALBUM_FILTER, albumFilter: name });
-        }
-
-        if (flag === "Category") {
-            dispatch({ type: actionType.SET_FILTER_TERM, filterTerm: name });
         }
 
     };

@@ -9,6 +9,8 @@ import { motion } from 'framer-motion'
 import { MdDelete } from 'react-icons/md'
 import AlertSuccess from "../alertsuccess";
 import AlertError from "../alerterror";
+import { NavLink } from 'react-router-dom'
+import { IoAdd } from 'react-icons/io5'
 
 
 export const DashboardAlbum = () => {
@@ -26,6 +28,12 @@ export const DashboardAlbum = () => {
             <Header></Header>
             <DashboardNav></DashboardNav>
             <div className="album-01">
+                <NavLink
+                    to={"/dashboard-newAlbum"}
+                    className="ic-add"
+                >
+                    <IoAdd size={25} />
+                </NavLink>
                 <div className="album-02">
                     <AlbumContainer data={allAlbums} />
                 </div>

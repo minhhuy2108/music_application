@@ -31,7 +31,7 @@
     max-height: 11rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(4px);
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .filter-button-3 {
@@ -78,6 +78,7 @@
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: 0.025em;
+    color: rgb(108, 173, 232);
 }
 
 .filter-button-7 {

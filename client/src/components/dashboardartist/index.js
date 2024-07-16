@@ -34,7 +34,7 @@ export const DashboardArtist = () => {
                     to={"/dashboard-newArtist"}
                     className="ic-add"
                 >
-                    <IoAdd />
+                    <IoAdd size={25} />
                 </NavLink>
                 <div className="artist-02">
                     <ArtistContainer data={artists} />

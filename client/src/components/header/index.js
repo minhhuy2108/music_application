@@ -32,7 +32,7 @@ export const Header = () => {
                 exit={{ opacity: 0, y: 50 }}
                 className="user-dropdown">
 
-                {user?.user?.role === 'admin' && (<NavLink to={'/dashboard-users'}>
+                {user?.user?.role === 'admin' && (<NavLink style={{ textDecoration: 'none' }} to={'/dashboard-users'}>
                     <>
                         <p className="dropdown-item">
                             Dashboard

@@ -61,3 +61,16 @@
     background-color: rgba(76, 133, 226, 0.5);
     box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
+
+.artist-icon-container {
+    color: rgb(108, 173, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}

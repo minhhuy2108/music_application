@@ -11,10 +11,11 @@ export const actionType = {
     SET_SONG: "SET_SONG",
     SET_SONG_PLAYING: "SET_SONG_PLAYING",
     SET_SEARCH_TERM: "SET_SEARCH_TERM",
+    SET_SONG_BY_ARTIST: "SET_SONG_BY_ARTIST"
 };
 
 const reducer = (state, action) => {
-    console.log(action);
+    // console.log(action);
 
     switch (action.type) {
         case actionType.SET_USER:
@@ -79,6 +80,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 searchTerm: action.searchTerm,
+            };
+        case actionType.SET_SONG_BY_ARTIST:
+            return {
+                ...state,
+                songByArtist: action.songByArtist,
             };
 
         default:

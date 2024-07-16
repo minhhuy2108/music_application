@@ -20,14 +20,12 @@ export const DashboardSong = () => {
     const [{ allSongs }, dispatch] = useStateValue();
 
     useEffect(() => {
-        if (!allSongs) {
-            getAllSongs().then((data) => {
-                dispatch({
-                    type: actionType.SET_ALL_SONGS,
-                    allSongs: data.data,
-                });
+        getAllSongs().then((data) => {
+            dispatch({
+                type: actionType.SET_ALL_SONGS,
+                allSongs: data.data,
             });
-        }
+        });
     }, []);
 
     useEffect(() => {
@@ -56,7 +54,7 @@ export const DashboardSong = () => {
                         to={"/dashboard-newSong"}
                         className="ic-add"
                     >
-                        <IoAdd />
+                        <IoAdd size={25} />
                     </NavLink>
                     <input
                         type="text"

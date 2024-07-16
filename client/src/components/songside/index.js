@@ -3,9 +3,11 @@ import './songside.css'
 import { Header } from '../header'
 import { useStateValue } from '../../context/StateProvider'
 import { actionType } from '../../context/reducer'
-import { getAllSongs } from '../../api'
+import { getAllSongs, getSongsByArtist } from '../../api'
 import { motion } from 'framer-motion'
 import { SearchBar } from '../searchbar'
+
+
 
 export default function SongSide() {
     const [
@@ -18,17 +20,16 @@ export default function SongSide() {
     ] = useStateValue();
 
     const [filteredSongs, setFilteredSongs] = useState();
-    const [musicState, setMusicState] = useState(true)
 
     useEffect(() => {
-        if (!allSongs) {
-            getAllSongs().then((data) => {
-                dispatch({
-                    type: actionType.SET_ALL_SONGS,
-                    allSongs: data.data,
-                });
+
+        getAllSongs().then((data) => {
+            dispatch({
+                type: actionType.SET_ALL_SONGS,
+                allSongs: data.data,
             });
-        }
+        });
+
     }, []);
 
 
@@ -47,6 +48,7 @@ export default function SongSide() {
             setFilteredSongs(null);
         }
     }, [searchTerm]);
+
 
     return (
 
@@ -78,12 +80,14 @@ export const SearchSongContainer = ({ musics }) => {
     const [{ isSongPlaying, song }, dispatch] = useStateValue();
     const addSongToContext = (index) => {
         if (!isSongPlaying) {
+            console.log('th1');
             dispatch({
                 type: actionType.SET_SONG_PLAYING,
                 isSongPlaying: true,
             });
         }
         if (song !== index) {
+            console.log('th2');
             dispatch({
                 type: actionType.SET_SONG,
                 song: index,
@@ -100,7 +104,7 @@ export const SearchSongContainer = ({ musics }) => {
                     animate={{ opacity: 1, translateX: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="search-song-card"
-                    onClick={() => addSongToContext(index)}
+                    onClick={() => addSongToContext(data.index)}
                 >
                     <div className="search-song-container">
                         <motion.img

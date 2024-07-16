@@ -98,7 +98,7 @@ export const DashboardNewSong = () => {
     };
 
     const saveSong = () => {
-        if (!songImageUrl || !audioAsset || !songName) {
+        if (!songImageUrl || !audioAsset || !songName || !artistFilter) {
             setSetAlert("error");
             setAlertMsg("Required fields are missing");
             setTimeout(() => {
@@ -138,55 +138,55 @@ export const DashboardNewSong = () => {
             dispatch({ type: actionType.SET_FILTER_TERM, filterTerm: null });
         }
     };
-    const saveArtist = () => {
-        if (!artistImageCover || !artistName) {
+    // const saveArtist = () => {
+    //     if (!artistImageCover || !artistName) {
 
-        } else {
-            setIsArtistUploading(true)
-            const data = {
-                name: artistName,
-                imageURL: artistImageCover,
-                twitter: twitter,
-                instagram: instagram,
-            };
+    //     } else {
+    //         setIsArtistUploading(true)
+    //         const data = {
+    //             name: artistName,
+    //             imageURL: artistImageCover,
+    //             twitter: twitter,
+    //             instagram: instagram,
+    //         };
 
-            saveNewArtist(data).then((res) => {
-                getAllArtists().then((data) => {
-                    dispatch({ type: actionType.SET_ARTISTS, artists: data.data });
-                });
-            });
+    //         saveNewArtist(data).then((res) => {
+    //             getAllArtists().then((data) => {
+    //                 dispatch({ type: actionType.SET_ARTISTS, artists: data.data });
+    //             });
+    //         });
 
-            setIsArtistUploading(false)
-            setArtistImageCover(null)
-            setArtistName("")
-            setTwitter("")
-            setInstagram("")
+    //         setIsArtistUploading(false)
+    //         setArtistImageCover(null)
+    //         setArtistName("")
+    //         setTwitter("")
+    //         setInstagram("")
 
-        }
-    }
+    //     }
+    // }
 
-    const saveAlbum = () => {
-        if (!albumImageCover || !albumName) {
+    // const saveAlbum = () => {
+    //     if (!albumImageCover || !albumName) {
 
-        }
-        else {
-            setIsAlbumUploading(true)
+    //     }
+    //     else {
+    //         setIsAlbumUploading(true)
 
-            const data = {
-                name: albumName,
-                imageURL: albumImageCover,
-            }
-            saveNewAlbum(data).then(() => {
-                getAllAlbums().then((data) => {
-                    dispatch({ type: actionType.SET_ALL_ALBUMNS, allAlbums: data.data });
-                });
-            })
+    //         const data = {
+    //             name: albumName,
+    //             imageURL: albumImageCover,
+    //         }
+    //         saveNewAlbum(data).then(() => {
+    //             getAllAlbums().then((data) => {
+    //                 dispatch({ type: actionType.SET_ALL_ALBUMNS, allAlbums: data.data });
+    //             });
+    //         })
 
-            setIsAlbumUploading(false)
-            setAlbumImageCover(null)
-            setAlbumName("")
-        }
-    }
+    //         setIsAlbumUploading(false)
+    //         setAlbumImageCover(null)
+    //         setAlbumName("")
+    //     }
+    // }
 
     return (
         <div className='dashboard'>
@@ -287,7 +287,7 @@ export const DashboardNewSong = () => {
 
                 {/* Add New Artist $ Album*/}
                 {/*Image uploader */}
-                <p>Artist Details</p>
+                {/* <p>Artist Details</p>
                 <div className="img-00">
                     {isArtistUploading && <ImageLoader progress={artistUploadingProgress} />}
                     {!isArtistUploading && (
@@ -371,10 +371,10 @@ export const DashboardNewSong = () => {
                         </motion.button>
                     )}
                 </div>
-
+ */}
 
                 {/*Album Information */}
-                <p>Album Details</p>
+                {/* <p>Album Details</p>
                 <div className="img-00">
                     {isAlbumUploading && <ImageLoader progress={albumUploadingProgress} />}
                     {!isAlbumUploading && (
@@ -408,17 +408,17 @@ export const DashboardNewSong = () => {
                             )}
                         </>
                     )}
-                </div>
+                </div> */}
                 {/*Album Name */}
-                <input
+                {/* <input
                     type="text"
                     placeholder="Album Name"
                     className="w-full text-base font-semibold text-textColor outline-none bg-transparent"
                     value={albumName}
                     onChange={(e) => setAlbumName(e.target.value)}
-                />
+                /> */}
                 {/*Save Album */}
-                <div className="send-but-01">
+                {/* <div className="send-but-01">
                     {isAlbumUploading ? (
                         <DisabledButton />
                     ) : (
@@ -430,7 +430,7 @@ export const DashboardNewSong = () => {
                             Save Album
                         </motion.button>
                     )}
-                </div>
+                </div> */}
 
 
 

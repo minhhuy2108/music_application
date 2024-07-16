@@ -79,10 +79,18 @@ class SongController {
         }
     };
 
-    getFavor = async (req, res) => {
-        const query = req.query.songId;
-        res.send(query);
+    getSongByArtist = async (req, res) => {
+        const artist = req.query.artist;
+        console.log(artist);
+        try {
+            const songsbyartist = await song.find({ artist });
+            console.log(songsbyartist);
+            return res.status(200).send({ success: true, data: songsbyartist });
+        } catch (err) {
+            res.status(500).json({ message: err.message });
+        }
     };
+
 }
 
 module.exports = new SongController

@@ -20,6 +20,10 @@ import { DashboardAlbum } from './components/dashboardalbum'
 import { DashboardNewSong } from './components/dashboardnewsong'
 import { motion } from 'framer-motion'
 import { MusicPlayer } from './components/musicplayer'
+import { DashBoardNewArtist } from './components/dashboardnewartist'
+import { DashBoardNewAlbum } from './components/dashboardnewalbum'
+import { SongByArtist } from './components/songbyartist'
+
 
 
 
@@ -68,6 +72,10 @@ const App = () => {
             <Route path='/dashboard-artists' element={<DashboardArtist />} />
             <Route path='/dashboard-albums' element={<DashboardAlbum />} />
             <Route path='/dashboard-newSong' element={<DashboardNewSong />} />
+            <Route path='/dashboard-newArtist' element={<DashBoardNewArtist />} />
+            <Route path='/dashboard-newAlbum' element={<DashBoardNewAlbum />} />
+            {/* <Route path='/songByArtist' element={<SongByArtist />} /> */}
+            <Route path="/songByArtist/:id" element={<SongByArtist />} />
           </MainPage>
         } >
       </Route>

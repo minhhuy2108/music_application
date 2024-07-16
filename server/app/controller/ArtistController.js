@@ -17,9 +17,10 @@ class ArtistController {
     };
 
     getOne = async (req, res) => {
-        const filter = { _id: req.params.getOne };
-
-        const cursor = await artist.findOne(filter);
+        // const filter = { _id: req.params.getOne };
+        const { id } = req.query
+        // console.log(id);
+        const cursor = await artist.findOne({ _id: id });
 
         if (cursor) {
             res.status(200).send({ success: true, data: cursor });

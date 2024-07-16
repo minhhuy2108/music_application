@@ -1,4 +1,4 @@
-.library-container .song-container li {
+.library-container .song-container .song-by-artist {
     list-style-type: none;
     padding: 5px 0px 5px 20px;
     display: flex;
@@ -7,28 +7,54 @@
     border-radius: 15px;
     cursor: pointer;
     transition: 0.5s linear;
+    text-decoration: none;
 }
 
-.song-container li span {
+.library-container .song-container .song-by-artist:hover {
+    list-style-type: none;
+    padding: 5px 0px 5px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s linear;
+    text-decoration: none;
+}
+
+.song-container .song-by-artist span {
     font-size: 12px;
     font-weight: 600;
     color: rgb(138, 179, 220) !important;
 }
 
+.song-container .song-by-artist:hover span {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(255, 255, 255) !important;
+}
 
-.song-container li img {
+
+
+.song-container .song-by-artist img {
     width: 40px;
     height: 40px;
     margin-left: 25px;
 }
 
-.song-container li h5 {
+.song-container .song-by-artist h5 {
     font-size: 15px;
     margin-left: 15px;
     color: rgb(108, 173, 232) !important;
 }
 
-.song-container li h5 .sub-title {
+.song-container .song-by-artist:hover h5 {
+    font-size: 15px;
+    margin-left: 15px;
+    color: rgb(255, 255, 255) !important;
+}
+
+.song-container .song-by-artist h5 .sub-title {
     font-size: 10px;
     color: #4c5262;
 }

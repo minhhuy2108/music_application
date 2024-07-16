@@ -24,14 +24,32 @@ const SongSchema = mongoose.Schema(
         },
         language: {
             type: String,
-            required: true,
+
         },
         category: {
             type: String,
-            required: true,
+
+        },
+        index: {
+            type: Number,
+            unique: true,
         },
     },
     { timestamps: true }
 );
+
+SongSchema.pre('save', async function (next) {
+    if (this.isNew) {
+        try {
+            const count = await mongoose.models.song.countDocuments();
+            this.index = count;
+            next();
+        } catch (error) {
+            next(error);
+        }
+    } else {
+        next();
+    }
+});
 
 module.exports = mongoose.model("song", SongSchema);

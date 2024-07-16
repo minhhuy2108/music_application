@@ -13,8 +13,10 @@ import { IoMdClose } from "react-icons/io";
 export const MusicPlayer = () => {
     const [{ allSongs, song, isSongPlaying }, dispatch] =
         useStateValue();
+
+
     const nextTrack = () => {
-        if (song >= (allSongs.length - 1)) {
+        if (song === (allSongs.length - 1)) {
             dispatch({
                 type: actionType.SET_SONG,
                 song: 0,
@@ -110,14 +112,14 @@ export const PlayListCard = () => {
     const [{ allSongs, song, isSongPlaying }, dispatch] = useStateValue();
 
     useEffect(() => {
-        if (!allSongs) {
-            getAllSongs().then((data) => {
-                dispatch({
-                    type: actionType.SET_ALL_SONGS,
-                    allSongs: data.data,
-                });
+
+        getAllSongs().then((data) => {
+            dispatch({
+                type: actionType.SET_ALL_SONGS,
+                allSongs: data.data,
             });
-        }
+        });
+
     }, []);
 
     const setCurrentPlaySong = (songindex) => {

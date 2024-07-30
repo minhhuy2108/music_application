@@ -28,21 +28,21 @@ export const DashboardSong = () => {
         });
     }, []);
 
-    useEffect(() => {
-        if (songFilter.length > 0) {
-            const filtered = allSongs.filter(
-                (data) =>
-                    data.artist.toLowerCase().includes(songFilter) ||
-                    data.artist.includes(songFilter) ||
-                    data.language.toLowerCase().includes(songFilter) ||
-                    data.name.toLowerCase().includes(songFilter) ||
-                    data.name.includes(songFilter)
-            );
-            setFilteredSongs(filtered);
-        } else {
-            setFilteredSongs(null);
-        }
-    }, [songFilter]);
+    // useEffect(() => {
+    //     if (songFilter.length > 0) {
+    //         const filtered = allSongs.filter(
+    //             (data) =>
+    //                 data.artist.toLowerCase().includes(songFilter) ||
+    //                 data.artist.includes(songFilter) ||
+    //                 data.language.toLowerCase().includes(songFilter) ||
+    //                 data.name.toLowerCase().includes(songFilter) ||
+    //                 data.name.includes(songFilter)
+    //         );
+    //         setFilteredSongs(filtered);
+    //     } else {
+    //         setFilteredSongs(null);
+    //     }
+    // }, [songFilter]);
 
     return (
         <div className='dashboard'>
@@ -56,15 +56,7 @@ export const DashboardSong = () => {
                     >
                         <IoAdd size={25} />
                     </NavLink>
-                    <input
-                        type="text"
-                        placeholder="Search here"
-                        className={` ${isFocus ? "search-box-focus" : "search-box"}`}
-                        value={songFilter}
-                        onChange={(e) => setSongFilter(e.target.value)}
-                        onBlur={() => setIsFocus(false)}
-                        onFocus={() => setIsFocus(true)}
-                    />
+
 
                 </div>
                 <div className="song-area">

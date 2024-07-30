@@ -34,6 +34,15 @@
     overflow: scroll;
 }
 
+.filter-button-2::-webkit-scrollbar {
+    width: 7px;
+}
+
+.filter-button-2::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(108, 173, 232);
+}
+
 .filter-button-3 {
     font-size: 1rem;
     line-height: 1.5rem;
